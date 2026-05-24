@@ -2,4 +2,4 @@
 . "$(dirname "$0")/_/husky.sh"
 
 npm run test:backend
-npm run test:frontend
+npm run test:frontend:ci
