@@ -1,0 +1,24 @@
+{
+    "type": "module",
+    "scripts": {
+        "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+        "dev:frontend": "cd frontend && npm start",
+        "dev:backend": "cd backend && ./gradlew bootRun",
+        "dev:db-baseline": "cd db && npm run refresh && npm run seed",
+        "format:frontend": "cd frontend && npm run format",
+        "format:backend": "cd backend && ./gradlew format",
+        "lint:frontend": "cd frontend && npm run lint",
+        "lint:backend": "cd backend && ./gradlew lint",
+        "test:backend": "cd backend && ./gradlew test",
+        "test:frontend": "cd frontend && npm test",
+        "test:frontend:ci": "cd frontend && npm run test:ci",
+        "prepare": "husky install",
+        "clean": "node clean.js"
+    },
+    "dependencies": {
+        "concurrently": "^6.5.1",
+        "husky": "^8.0.3",
+        "prettier": "^3.1.1",
+        "rimraf": "^5.0.5"
+    }
+}

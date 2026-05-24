@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "eslint:recommended", 
+    "plugin:eslint-comments/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "plugins": [ "eslint-comments", "react" ],
+  "root": true,
+  "env": { "browser": true, "es2020": true },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest"
+  },
+  "ignorePatterns": ["build","specs",".eslintrc"],
+  "settings": { "react": { "version": "18.2" } },
+  "rules": {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-no-target-blank": "off",
+    "explicit-function-return-type": "off",
+    "strict-boolean-expressions": "off",
+    "no-floating-promises": "off",
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "_" }],
+    "no-explicit-any": "off",
+    "no-empty-function": ["error", { "allow": ["methods", "arrowFunctions"] }],
+    "no-case-declarations": "off",
+    "no-console": "error",
+    "no-debugger": "error"
+  }
+}

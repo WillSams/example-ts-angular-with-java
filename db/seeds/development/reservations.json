@@ -1,0 +1,6 @@
+[
+  { "room_id": "room_1", "checkin_date": "2026-07-01", "checkout_date": "2026-07-05", "total_charge": 580.0  },
+  { "room_id": "room_2", "checkin_date": "2026-07-10", "checkout_date": "2026-07-12", "total_charge": 600.0  },
+  { "room_id": "room_3", "checkin_date": "2026-08-01", "checkout_date": "2026-08-03", "total_charge": 900.0  },
+  { "room_id": "room_1", "checkin_date": "2026-09-15", "checkout_date": "2026-09-18", "total_charge": 440.0  }
+]

@@ -1,0 +1,46 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+*.eclipse
+.settings/
+.project
+.classpath
+
+# Java
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+target/
+
+# Node / Angular
+node_modules/
+dist/
+.angular/
+*.js.map
+
+# Environment
+.env
+.envrc
+*.local.sh
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
+
+claude/

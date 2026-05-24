@@ -1,0 +1,104 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <!-- Alert -->
+      <div *ngIf="alert$ | async as alert">
+        <div
+          class="alert alert-{{ alert.alertType }} alert-dismissible fade show"
+          role="alert"
+        >
+          {{ alert.message }}
+          <button
+            type="button"
+            class="btn-close"
+            aria-label="Close"
+            (click)="dismissAlert()"
+          ></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div
+          class="card-header d-flex justify-content-between align-items-center"
+        >
+          <h4 class="mb-0">Book a Room</h4>
+          <a routerLink="/home" class="btn btn-outline-secondary btn-sm">
+            &larr; Back
+          </a>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()" #reservationForm="ngForm">
+            <div class="mb-3">
+              <label for="roomId" class="form-label">Room</label>
+              <select
+                id="roomId"
+                class="form-select"
+                name="roomId"
+                [(ngModel)]="formData.room_id"
+                required
+              >
+                <option value="" disabled>-- Select a room --</option>
+                <option *ngFor="let room of rooms$ | async" [value]="room.id">
+                  {{ room.id }} — {{ room.num_beds }} beds —
+                  {{ room.allow_smoking ? 'Smoking' : 'Non-smoking' }} — ${{
+                    room.daily_rate
+                  }}/night + ${{ room.cleaning_fee }} cleaning
+                </option>
+              </select>
+              <div
+                class="form-text text-muted"
+                *ngIf="(rooms$ | async)?.length === 0"
+              >
+                Loading rooms...
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="checkinDate" class="form-label">Check-In Date</label>
+              <input
+                type="date"
+                id="checkinDate"
+                class="form-control"
+                name="checkinDate"
+                [(ngModel)]="formData.checkin_date"
+                required
+                [min]="tomorrow"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="checkoutDate" class="form-label"
+                >Check-Out Date</label
+              >
+              <input
+                type="date"
+                id="checkoutDate"
+                class="form-control"
+                name="checkoutDate"
+                [(ngModel)]="formData.checkout_date"
+                required
+                [min]="formData.checkin_date || tomorrow"
+              />
+            </div>
+
+            <div class="d-flex gap-2">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="reservationForm.invalid || (loading$ | async)"
+              >
+                <span
+                  *ngIf="loading$ | async"
+                  class="spinner-border spinner-border-sm me-2"
+                  role="status"
+                ></span>
+                Book Reservation
+              </button>
+              <a routerLink="/home" class="btn btn-secondary">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

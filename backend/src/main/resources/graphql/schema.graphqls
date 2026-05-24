@@ -1,0 +1,44 @@
+type Query {
+  getAllReservations: ReservationResult!
+  getAllRooms: RoomResult!
+  getReservation(id: ID!): ReservationResult!
+}
+
+type Mutation {
+  createReservation(input: ReservationInput!): ReservationResult!
+  deleteReservation(reservationId: Int!): ReservationResult!
+}
+
+type Reservation {
+  id: ID!
+  room_id: String!
+  checkin_date: String!
+  checkout_date: String!
+  total_charge: Float!
+}
+
+type Room {
+  id: String!
+  num_beds: Int!
+  allow_smoking: Boolean!
+  daily_rate: Float!
+  cleaning_fee: Float!
+}
+
+input ReservationInput {
+  room_id: String!
+  checkin_date: String!
+  checkout_date: String!
+}
+
+type ReservationResult {
+  success: Boolean!
+  errors: [String]
+  reservations: [Reservation]
+}
+
+type RoomResult {
+  success: Boolean!
+  errors: [String]
+  rooms: [Room]
+}
