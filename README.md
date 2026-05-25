@@ -17,6 +17,10 @@ This is a Java/Angular mirror of the [React/Python version](https://github.com/W
 - Check-in date must be in the future.
 - Final price for reservations is determined by daily price * number of nights, plus the cleaning fee.
 
+**Web UI Usage**:
+
+![text](example.png)
+
 **API Usage**:
 
 Example usage via [curl](https://curl.se/download.html):
