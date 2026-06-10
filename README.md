@@ -1,4 +1,4 @@
-# Hotel Reservation Angular + Spring Boot Example - JavaScript/Java
+# Hotel Reservation Angular + Spring Boot Example - TypeScript / Java
 
 **JavaScript, Angular 17, NgRx 17, Bootstrap 5, TypeScript, Java, Spring Boot 3, Spring for GraphQL, Spring Security (JWT), Spring Data JPA, PostgreSQL**
 
