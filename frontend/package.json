@@ -36,7 +36,7 @@
     "@angular-eslint/template-parser": "^19.0.0",
     "@angular/cli": "^19.0.0",
     "@angular/compiler-cli": "^19.0.0",
-    "@types/jasmine": "~5.1.0",
+    "@types/jasmine": "~6.0.0",
     "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^8.60.1",
     "@typescript-eslint/parser": "^8.60.1",
