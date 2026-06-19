@@ -1,12 +1,17 @@
 export ENV=development
+export NODE_ENV=${ENV}
 export SECRET_KEY=s3cr3t-k3y
-export RESERVATION_PORT=8080
-export RESERVATION_API=http://localhost:${RESERVATION_PORT}/${ENV}
+
 export FRONTEND_PORT=3000
 export ALLOWED_ORIGINS=http://localhost:${FRONTEND_PORT}
+
+export RESERVATION_PORT=8080
+export RESERVATION_API=http://localhost:${RESERVATION_PORT}/${ENV}
+
 export PG_USER=postgres
 export PG_PASSWD=postgres
 export PG_HOST=localhost
 export PG_NAME=hotel_${ENV}
 export PG_PORT=8081
 export PG_URL=jdbc:postgresql://${PG_HOST}:${PG_PORT}/${PG_NAME}
+

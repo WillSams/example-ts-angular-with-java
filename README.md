@@ -1,12 +1,12 @@
 # Hotel Reservation Angular + Spring Boot Example - TypeScript / Java
 
-**JavaScript, Angular 17, NgRx 17, Bootstrap 5, TypeScript, Java, Spring Boot 3, Spring for GraphQL, Spring Security (JWT), Spring Data JPA, PostgreSQL**
+**TypeScript, Angular 21, NgRx 21, Bootstrap 5, Java, Spring Boot 3, Spring for GraphQL, Spring Security (JWT), Spring Data JPA, PostgreSQL**
 
 [![Application Unit Tests](https://github.com/WillSams/example-js-angular-with-java/actions/workflows/pr-validate.yml/badge.svg)](https://github.com/WillSams/example-js-angular-with-java/actions/workflows/pr-validate.yml)
 
 This example contains a frontend and backend:
 
-- The frontend is an [Angular 17](https://angular.dev) application using [Bootstrap 5](https://getbootstrap.com/docs/5.3/) for view designs, with [NgRx](https://ngrx.io) for state management.
+- The frontend is an [Angular 21](https://angular.dev) application using [Bootstrap 5](https://getbootstrap.com/docs/5.3/) for view designs, with [NgRx](https://ngrx.io) for state management.
 - The backend is a [GraphQL API](https://graphql.org) built with [Spring Boot 3](https://spring.io/projects/spring-boot) providing the ability to create, delete, and list reservations plus available rooms.
 
 This is a Java/Angular mirror of the [React/Python version](https://github.com/WillSams/example-js-react-with-python) of the same application.
@@ -19,7 +19,7 @@ This is a Java/Angular mirror of the [React/Python version](https://github.com/W
 
 **Web UI Usage**:
 
-![text](example.png)
+![Hotel reservation UI](example.png)
 
 **API Usage**:
 
@@ -61,14 +61,14 @@ Navigate to [http://localhost:8080/graphiql](http://localhost:8080/graphiql) whe
 To run the service, you will need to install the following tools:
 
 - [Java 17+](https://adoptium.net/)
-- [NodeJS 20+](https://nodejs.org/en/)
+- [NodeJS 22+](https://nodejs.org/en/)
 - [Docker](https://www.docker.com/)
 
 The below are optional but highly recommended:
 
-- [nvm](https://github.com/nvm-sh/nvm) — Used to manage NodeJS versions.
-- [Direnv](https://direnv.net/) — Used to manage environment variables.
-- [SDKMAN](https://sdkman.io/) — Used to manage Java/Gradle versions.
+- [nvm](https://github.com/nvm-sh/nvm): manages NodeJS versions
+- [Direnv](https://direnv.net/): manages environment variables
+- [SDKMAN](https://sdkman.io/): manages Java/Gradle versions
 
 ## Getting Started
 
@@ -143,6 +143,17 @@ npm test           # interactive (watch mode)
 npm run test:ci    # single run (for CI)
 ```
 
+## Upgrading Angular
+
+Angular major version upgrades require `ng update` rather than a plain `npm install`, because each major ships migration schematics that update your source code automatically. Upgrade one major at a time (e.g. 21 to 22, not 21 to 23):
+
+```bash
+cd frontend
+npx ng update @angular/core@22 @angular/cli@22 @ngrx/store@22
+```
+
+Dependabot is configured to ignore Angular major version bumps for this reason. Run the upgrade manually when ready.
+
 ## Linting & Formatting
 
 ### Backend
@@ -169,10 +180,10 @@ npm run format     # Prettier across all .ts, .html, and .scss files
 
 This repository includes two stub components as learning exercises:
 
-1. **Exercise #1** — `frontend/src/app/screens/reservations/show/show-reservation.component.ts`
+1. **Exercise #1:** `frontend/src/app/screens/reservations/show/show-reservation.component.ts`
    Implement the reservation detail view.
 
-2. **Exercise #2** — `frontend/src/app/screens/reservations/edit/edit-reservation.component.ts`
+2. **Exercise #2:** `frontend/src/app/screens/reservations/edit/edit-reservation.component.ts`
    Implement the reservation edit form (may require backend changes for an update mutation).
 
 ## Project Structure
@@ -195,7 +206,7 @@ This repository includes two stub components as learning exercises:
 │       ├── application.properties
 │       ├── data.sql             # Room seed data
 │       └── graphql/schema.graphqls
-├── frontend/                   # Angular 17 application
+├── frontend/                   # Angular 21 application
 │   ├── .eslintrc.json          # ESLint + Angular ESLint rules
 │   ├── .prettierrc             # Prettier formatting config
 │   ├── src/app/
