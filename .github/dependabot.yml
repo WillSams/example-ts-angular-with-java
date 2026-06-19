@@ -14,6 +14,28 @@ updates:
     interval: weekly
   open-pull-requests-limit: 10
   target-branch: main
+  groups:
+    angular:
+      patterns:
+        - "@angular/*"
+        - "@angular-devkit/*"
+        - "@angular-eslint/*"
+        - "@ngtools/*"
+        - "@schematics/angular"
+    ngrx:
+      patterns:
+        - "@ngrx/*"
+  ignore:
+    # Major Angular upgrades require `ng update` with schematics migrations —
+    # a bare version bump will break the build. Run `ng update` manually instead.
+    - dependency-name: "@angular/*"
+      update-types: ["version-update:semver-major"]
+    - dependency-name: "@angular-devkit/*"
+      update-types: ["version-update:semver-major"]
+    - dependency-name: "@angular-eslint/*"
+      update-types: ["version-update:semver-major"]
+    - dependency-name: "@ngrx/*"
+      update-types: ["version-update:semver-major"]
 - package-ecosystem: gradle
   directory: "/backend"
   schedule:
