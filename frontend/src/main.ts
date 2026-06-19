@@ -5,7 +5,7 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { isDevMode } from '@angular/core';
+import { isDevMode, provideZoneChangeDetection } from '@angular/core';
 import { routes } from './app/app.routes';
 import { reservationReducer } from './app/store/reservation/reservation.reducer';
 import { ReservationEffects } from './app/store/reservation/reservation.effects';
@@ -14,6 +14,7 @@ import { AuthService } from './app/core/services/auth.service';
 
 bootstrapApplication(AppComponent, {
   providers: [
+    provideZoneChangeDetection(),
     provideRouter(routes),
     provideHttpClient(withInterceptors([authInterceptor])),
     provideStore({ reservation: reservationReducer }),
